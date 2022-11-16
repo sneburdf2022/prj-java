@@ -19,6 +19,12 @@
 	<dependencies>
 
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+
+		<dependency>
 			<groupId>com.walterjwhite.java.dependencies</groupId>
 			<artifactId>javax-persistence</artifactId>
 			<version>0.0.17</version>
