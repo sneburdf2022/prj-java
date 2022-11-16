@@ -1,6 +1,7 @@
 package org.senai.prjjava.controller;
 
 import java.util.Optional;
+
 import org.senai.prjjava.entity.Produto;
 import org.senai.prjjava.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
 @Controller
 @RequestMapping(path = "/api/produto")
@@ -49,7 +48,7 @@ public class ProdutoController {
     }
 
     @DeleteMapping("/{id}")
-    public @ResponseBody String apagar(@PathVariable Id id) {
+    public @ResponseBody String apagar(@PathVariable Integer id) {
         pRepository.deleteById(id);
         return "Ok apagado";
 
