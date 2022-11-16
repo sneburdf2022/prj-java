@@ -49,8 +49,9 @@ public class ProdutoController {
     }
 
     @DeleteMapping("/{id}")
-    public void apagar(@PathVariable Id id) {
+    public @ResponseBody String apagar(@PathVariable Id id) {
         pRepository.deleteById(id);
+        return "Ok apagado";
 
     }
 
