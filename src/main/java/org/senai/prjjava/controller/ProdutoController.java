@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import static org.springframework.http.ResponseEntity.ok;
 
 @Controller
 @RequestMapping(path = "/api/produto")
@@ -48,9 +51,15 @@ public class ProdutoController {
     }
 
     @DeleteMapping("/{id}")
-    public @ResponseBody String apagar(@PathVariable Integer id) {
+    public ResponseEntity<Integer> apagar(@PathVariable Integer id) {
+
         pRepository.deleteById(id);
-        return "Ok apagado";
+        /*
+         * if (!isRemoved) {
+         * return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+         * }
+         */
+        return new ResponseEntity<>(id, HttpStatus.OK);
 
     }
 
