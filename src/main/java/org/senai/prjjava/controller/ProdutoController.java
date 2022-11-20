@@ -32,7 +32,7 @@ public class ProdutoController {
     }
 
     @GetMapping("/")
-    public @ResponseBody Iterable<Produto> buscarUsuarios() {
+    public @ResponseBody Iterable<Produto> buscarProdutos() {
         return pRepository.findAll();
     }
 
